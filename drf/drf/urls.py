@@ -1,9 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
 from blog.views import BlogAPIDestroy, BlogAPIList, BlogAPIUpdate
-from rest_framework import routers
-import rest_framework.urls
-
 
 # router = routers.DefaultRouter()
 # router.register(r'blog', BlogViewSet)
