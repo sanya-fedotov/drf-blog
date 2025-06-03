@@ -22,7 +22,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 class BlogAPIList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerialiazers
-    # permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class BlogAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset = Post.objects.all()
