@@ -7,7 +7,21 @@ class PostSerialiazers(serializers.ModelSerializer):
         model = Post 
         fields = ['id', 'title', 'content', 'tags', 'created_at']
 
+    def create(self, validated_data):
+        tags = validated_data.pop("tags", [])
+        post = Post.objects.create(**validated_data)   
+        post.tags.set(tags)
+        return post
+
+    def update(self, instance, validated_data):
+        instance.title = validated_data.get("title", instance.title)
+        instance.content = validated_data.get("title", instance.content)
+        instance.tags = validated_data.get("title", instance.tags)
+        instance.save()
+        return instance
+    
+
 class TagSerialiazers(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fielfs = ['id', 'name']
+        fields = ['id', 'name']
