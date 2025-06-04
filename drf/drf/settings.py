@@ -4,6 +4,7 @@ SECRET_KEY = 'django-insecure-dg6k^xz7*it4u#-br-fgo3i00phf)z0gww7lu+m0m^l4dxjgdz
 DEBUG = True
 ALLOWED_HOSTS = []
 INSTALLED_APPS = [
+    'drf_yasg',
     'blog',
     'djoser',
     'rest_framework',
